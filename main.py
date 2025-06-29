@@ -1,5 +1,6 @@
 import time
 import os
+from dotenv import load_dotenv
 import smtplib
 from datetime import datetime, timedelta
 from data_manager import DataManager
@@ -8,12 +9,14 @@ from flight_data import find_cheapest_flight
 
 
 # ==================== Set up the Email Notification ====================
+load_dotenv()
+
 MY_EMAIL = os.getenv("GOOGLE_EMAIL")
 MY_PASSWORD = os.getenv("GMAIL_PASSWORD")
 
 # ==================== Update the Airport Codes in Excel Sheet ====================
 
-data_manager = DataManager("city_name.csv")
+data_manager = DataManager("/Users/aseemshaikh/Documents/Skills/ETL/Projects/flight_tracker/city_name.csv")
 sheet_data = data_manager.get_city_list()
 flight_search = FlightSearch()
 

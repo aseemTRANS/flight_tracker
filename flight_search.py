@@ -124,7 +124,7 @@ class FlightSearch:
             "adults": 1,
             "nonStop": "true",
             "currencyCode": "GBP",
-            "max": "10",
+            "max": "5",
         }
 
         response = requests.get(

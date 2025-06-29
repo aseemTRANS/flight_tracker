@@ -9,7 +9,7 @@ class DataManager:
     def get_city_list(self):
         df = pd.read_csv(self.file_path)
         df = df[df["city"].notna()]   # Drop rows where city is NaN
-        # We only need city and iataCode columns for main loop
+        # We only need city, iataCode and lowestPriceThreshold columns for main loop
         return df[['city', 'iataCode', 'lowestPriceThreshold']].drop_duplicates().to_dict(orient='records')
 
     
