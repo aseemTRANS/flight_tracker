@@ -1,6 +1,6 @@
 # ✈️ Flight Price Tracker ETL Project
 
-<!-- Overview -->
+## Overview 
 
 This project helps you track the cheapest flight prices from London to your selected destinations for specified travel dates.
 
@@ -9,7 +9,7 @@ It fetches live flight data daily using the Amadeus API, updates a local CSV fil
 Additionally, it is automated using Apache Airflow, so it runs daily without manual intervention.
 
 
-<!-- Features -->
+## Features 
 
 * Automatically fetch flight prices from Amadeus API
 
@@ -22,7 +22,7 @@ Additionally, it is automated using Apache Airflow, so it runs daily without man
 * Extendable and fully customizable
 
 
-<!-- Project Structure -->
+## Project Structure 
 
 flight_tracker/
 
@@ -36,7 +36,7 @@ flight_tracker/
 * README.md
 
 
-<!-- Get Amadeus API Credentials -->
+## Get Amadeus API Credentials 
 
 * Sign up at Amadeus for Developers (https://developers.amadeus.com/register)
 
@@ -47,14 +47,14 @@ flight_tracker/
 * Add them to a .env file:
 
 
-<!-- Set up new email account for notification -->
+## Set up new email account for notification 
 
 * In your new account, go to security and generate app password
 
 * Use this password and email id for email notification
 
 
-<!-- Future Possibilities -->
+## Future Possibilities 
 
 * Track prices for more cities or multi-city trips
 
@@ -67,7 +67,7 @@ flight_tracker/
 * Deploy on cloud (e.g., AWS or GCP) for fully automated live service
 
 
-<!-- Contributing -->
+## Contributing 
 
 Pull requests and ideas are welcome! 
 
