@@ -16,7 +16,10 @@ MY_PASSWORD = os.getenv("GMAIL_PASSWORD")
 
 # ==================== Update the Airport Codes in Excel Sheet ====================
 
-data_manager = DataManager("/Users/aseemshaikh/Documents/Skills/ETL/Projects/flight_tracker/city_name.csv")
+data_manager = data_manager = DataManager(
+    city_file="/Users/aseemshaikh/Documents/Skills/ETL/Projects/flight_tracker/city_name.csv",
+    price_file="/Users/aseemshaikh/Documents/Skills/ETL/Projects/flight_tracker/flight_price_history.csv"
+)
 sheet_data = data_manager.get_city_list()
 flight_search = FlightSearch()
 

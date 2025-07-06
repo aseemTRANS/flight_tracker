@@ -1,23 +1,22 @@
 import pandas as pd
 from datetime import datetime
+import os
 
 class DataManager:
-    def __init__(self, file_path="city_name.csv"):
-        self.file_path = file_path
-
+    def __init__(self, city_file="city_name.csv", price_file="flight_price_history.csv"):
+        self.city_file = city_file
+        self.price_file = price_file
 
     def get_city_list(self):
-        df = pd.read_csv(self.file_path)
-        df = df[df["city"].notna()]   # Drop rows where city is NaN
-        # We only need city, iataCode and lowestPriceThreshold columns for main loop
+        df = pd.read_csv(self.city_file)
+        df = df[df["city"].notna()]
         return df[['city', 'iataCode', 'lowestPriceThreshold']].drop_duplicates().to_dict(orient='records')
 
-    
     def append_price_record(self, city, iata, price, checked_date, dep_date, ret_date, airline, departure_time, arrival_time):
-        """
-        Appends a new row to the CSV file with today's flight price data and extra details.
-        """
-        df = pd.read_csv(self.file_path)
+        if os.path.exists(self.price_file):
+            df = pd.read_csv(self.price_file)
+        else:
+            df = pd.DataFrame()
 
         new_row = {
             "city": city,
@@ -32,8 +31,6 @@ class DataManager:
         }
 
         df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-        df.to_csv(self.file_path, index=False)
+        df.to_csv(self.price_file, index=False)
 
         print(f"Added new record for {city}: £{price}, Airline {airline}, Dep {departure_time}, Arr {arrival_time}")
-
-
