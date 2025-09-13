@@ -1,4 +1,4 @@
-# ✈️ Flight Price Tracker ETL Project
+# ✈️ Flight Price Tracker ETL Project (Email Notification)
 
 ## Overview 
 
