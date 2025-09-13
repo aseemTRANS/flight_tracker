@@ -6,7 +6,7 @@ This project helps you track the cheapest flight prices from London to your sele
 
 It fetches live flight data daily using the Amadeus API, updates a local CSV file with price and flight details, and can send you email alerts when prices drop below your desired threshold.
 
-Additionally, it is automated using Apache Airflow, so it runs daily without manual intervention.
+Additionally, it is automated using Git Hub Action, so it runs daily without manual intervention.
 
 
 ## Features 
@@ -17,23 +17,10 @@ Additionally, it is automated using Apache Airflow, so it runs daily without man
 
 * Email notification when prices drop below your set threshold
 
-* Automated daily scheduling using Airflow
+* Automated daily scheduling using Git Hub Action
 
 * Extendable and fully customizable
 
-
-## Project Structure 
-
-flight_tracker/
-
-* data_manager.py
-* flight_data.py
-* flight_search.py
-* main.py
-* city_name.csv
-* .env
-* .gitignore
-* README.md
 
 
 ## Get Amadeus API Credentials 
